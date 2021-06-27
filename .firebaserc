@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "examen2covid": {
+      "hosting": {
+        "sistemaVacunacionDAV": [
+          "examen2covid"
+        ]
+      }
+    }
+  }
+}

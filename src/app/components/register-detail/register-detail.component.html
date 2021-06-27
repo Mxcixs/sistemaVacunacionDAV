@@ -1,0 +1,59 @@
+<nav class="navbar navbar-dark bg-success">
+  <div class="container-fluid d-flex justify-content-center">
+    <span class="navbar-brand mb-0 h1">LISTADO DE VACUNACIÓN</span>
+  </div>
+</nav>
+<div class="container mt-3">
+  <div class="card">
+    <div class="d-grid gap-2 col-12 p-2">
+      <button
+        type="button"
+        class="btn btn-outline-danger btn-lg"
+        routerLink="/home"
+      >
+        Regresar
+      </button>
+    </div>
+    <div class="card-body">
+      <h4 class="text-center">Tabla vacía</h4>
+      <!--*ngIf="clientes.length == 0"-->
+      <table class="table table-striped mt-3">
+        <thead>
+          <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Sexo</th>
+            <th>Lugar de residencia</th>
+            <th>Fecha de nacimiento</th>
+            <th>Lugar de nacimiento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of registers">
+            <th>{{ r.dni }}</th>
+            <td>{{ r.nombre }}</td>
+            <td>{{ r.telefono }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.sexo }}</td>
+            <td>{{ r.lugarResidencia }}</td>
+            <td>{{ r.fechaNacimiento }}</td>
+            <td>{{ r.lugarNacimiento }}</td>
+            <td>
+              <i
+                [routerLink]="['/update-registers/', r.uid]"
+                class="fas fa-user-edit fa-lg text-info me-4"
+              ></i>
+              <i
+                (click)="deleteRegister(r.uid)"
+                class="fas fa-user-minus fa-lg text-danger"
+              ></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

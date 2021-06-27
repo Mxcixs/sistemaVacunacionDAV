@@ -1,0 +1,122 @@
+<nav class="navbar navbar-dark" style="background-color: #dabd3c">
+  <div class="container-fluid d-flex justify-content-center">
+    <span class="navbar-brand mb-0 h1">FORMULARIO DE VACUNACIÓN</span>
+  </div>
+</nav>
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="text-center">Información</h2>
+      <span class="badge bg-danger">Todos los campos son requeridos</span>
+      <!--*ngIf="submitted && createInfo.invalid"-->
+      <form class="row g-3 mt-2" [formGroup]="registerForm">
+        <div class="col-md-5">
+          <label for="validationDefault01" class="form-label">DNI</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="####-####-#####"
+            id="validationDefault01"
+            formControlName="dni"
+            required
+          />
+        </div>
+        <div class="col-md-7">
+          <label for="validationDefault01" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nombre completo"
+            formControlName="nombre"
+            required
+          />
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationDefaultUsername" class="form-label"
+            >Teléfono</label
+          >
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">+504</span>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Numero fijo o personal"
+              formControlName="telefono"
+              aria-describedby="inputGroupPrepend2"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefaultUsername" class="form-label"
+            >Email</label
+          >
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="*En caso de tener"
+              formControlName="email"
+              aria-describedby="inputGroupPrepend2"
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault04" class="form-label">Sexo</label>
+          <select class="form-select" formControlName="sexo" required>
+            <option selected disabled value="">Indique su sexo:</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault06" class="form-label"
+            >Lugar de residencia</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Municipio y departamento"
+            formControlName="lugarResidencia"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault05" class="form-label"
+            >Fecha de nacimiento</label
+          >
+          <input
+            type="datetime-local"
+            class="form-control"
+            formControlName="fechaNacimiento"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault06" class="form-label"
+            >Lugar de nacimiento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Municipio y departamento"
+            formControlName="lugarNacimiento"
+            required
+          />
+        </div>
+        <div class="d-grid gap-2 col-12 p-2">
+          <button
+            class="btn btn-lg"
+            style="background-color: #42bd48e8"
+            (click)="saveData()"
+          >
+            Enviar formulario
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
